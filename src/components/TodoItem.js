@@ -15,7 +15,11 @@ export class TodoItem extends Component {
         return{
             background:'#f4f4f4',
             padding:'10px',
-            borderBottom:'1px #ccc dotted',
+            margin:'10px',
+            border:'1px solid #39f',
+            borderRadius:'4px',
+            color:'#fff',
+            backgroundColor: '#6dd5ed',
             textDecoration: this.props.todo.done ?'line-through':'none'
         }
     }

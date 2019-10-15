@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -43,12 +44,23 @@ class App extends React.Component{
         todo.id !== id)]
     })
   }
-
+  addTodo=(title)=>{ 
+    let id = this.state.todos.length + 1;
+    const newTodo ={
+      id,
+      title,
+      done: false
+    }
+    this.setState({todos:[...this.state.todos, newTodo]});
+}
   render(){
     return (
       <div className="App">
-        <Header />
+      <div className="container">
+      <Header />
+        <AddTodo addTodo={this.addTodo}/>
         <Todos todos ={this.state.todos} markComplete = {this.markComplete} delTodo={this.delTodo} />
+      </div>
         <Footer />
       </div>
     ); 
