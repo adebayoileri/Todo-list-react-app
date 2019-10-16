@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Todos from './components/Todos';
-import TodosData from './TodosData.js'
+import About from './components/pages/About';
+import TodosData from './TodosData.js;
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
+import './App.css';
 class App extends React.Component{
   state ={
     todos: TodosData
@@ -40,14 +42,21 @@ class App extends React.Component{
 }
   render(){
     return (
-      <div className="App">
+      <Router>
+        <div className="App">
       <div className="container">
       <Header />
+      <Route exact path="/" render={ props=>(
+        <React.Fragment>
         <AddTodo addTodo={this.addTodo}/>
         <Todos todos ={this.state.todos} markComplete = {this.markComplete} delTodo={this.delTodo} />
+        </React.Fragment>
+      )} />
+      <Route path="/about" component={About} />
       </div>
         <Footer />
       </div>
+      </Router>
     ); 
   }
 }
