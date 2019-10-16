@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 import Todos from './components/Todos';
+<<<<<<< HEAD
+=======
+import About from './components/pages/About';
+>>>>>>> parent of 96449cb... Merge branch 'master' into react-router
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
