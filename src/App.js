@@ -1,29 +1,14 @@
 import React from 'react';
 import './App.css';
 import Todos from './components/Todos';
+import TodosData from './TodosData.js'
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
 class App extends React.Component{
   state ={
-    todos:[
-      {
-        id: 1,
-        title :'Wash all plates',
-        done:false
-      },
-      {
-        id: 2,
-        title :'Play PS4',
-        done: false
-      },
-      {
-        id: 3,
-        title :'Read books on reactjs',
-        done:false
-      }
-    ]
+    todos: TodosData
   }
 
   //MarkComplete
